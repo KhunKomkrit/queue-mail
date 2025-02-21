@@ -7,5 +7,8 @@ export class MailQueueService {
 
   async addMailToQueue(createMailQueueDto: CreateMailQueueDto) {
     await this.mailQueue.add('mail', createMailQueueDto);
+    return {
+      message: 'Mail added to queue',
+    };
   }
 }
